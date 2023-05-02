@@ -26,7 +26,7 @@ function Header() {
     }, [currentImage, images.length]);
 
     return (
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 min-h-screen flex flex-wrap justify-center items-center">
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 min-h-screen flex flex-wrap justify-center items-center mb-10">
 
             <div className="w-full md:w-1/2 mb-4 md:mb-0 flex flex-col justify-center items-start pr-4">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 ps-32">
