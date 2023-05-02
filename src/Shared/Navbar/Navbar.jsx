@@ -14,10 +14,7 @@ const Navbar = () => {
                         <Link to="/" className="text-gray-800 hover:text-purple-600 font-bold text-xl">Home</Link>
 
                         <Link to='/blog' className="text-gray-800 hover:text-purple-600 font-bold text-xl">Blog</Link>
-
-                        
-
-                        <a href="/" className="text-gray-800 hover:text-purple-600 font-bold text-xl">Login</a>
+                        <Link to='/login' className="text-gray-800 hover:text-purple-600 font-bold text-xl">Login</Link>
                     </div>
 
                 </div>
