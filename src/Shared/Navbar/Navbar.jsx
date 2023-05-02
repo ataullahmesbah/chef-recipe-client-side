@@ -10,7 +10,7 @@ const Navbar = () => {
                         <a href="/" className="font-extrabold text-xl text-gray-800">Kitchen Zen</a>
                     </div>
 
-                    <div className="hidden md:flex items-center justify-center ml-10 space-x-4">
+                    <div className="hidden md:flex items-center justify-center ml-10 space-x-5">
                         <Link to="/" className="text-gray-800 hover:text-purple-600 font-bold text-xl">Home</Link>
 
                         <Link to='/blog' className="text-gray-800 hover:text-purple-600 font-bold text-xl">Blog</Link>
