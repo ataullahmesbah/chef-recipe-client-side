@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
+
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+        .then()
+        .catch(error => 
+            console.log(error))
+    }
+
     return (
         <nav className="bg-white shadow-lg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,7 +26,23 @@ const Navbar = () => {
                         <Link to="/" className="text-gray-800 hover:text-purple-600 font-bold text-xl">Home</Link>
 
                         <Link to='/blog' className="text-gray-800 hover:text-purple-600 font-bold text-xl">Blog</Link>
-                        <Link to='/login' className="text-gray-800 hover:text-purple-600 font-bold text-xl">Login</Link>
+
+                        {user && 
+                                <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
+                           }
+
+                        { user ?
+                        <button onClick={handleLogOut} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">Logout</button> :
+
+                            <Link to='/login' className="text-gray-800 hover:text-purple-600 font-bold text-xl">Login</Link>
+                            }
+
+
+
+                        
+
+
+
                     </div>
 
                 </div>

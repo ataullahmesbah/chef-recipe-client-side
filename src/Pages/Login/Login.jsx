@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Form, Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const { signIn } = useContext(AuthContext);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSignIn = event => {
         event.preventDefault();
@@ -13,13 +14,14 @@ const Login = () => {
         console.log(email, password);
         form.reset();
         signIn(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error);
+                setErrorMessage('Invalid email address or password.');
+            })
 
     }
     return (
@@ -28,6 +30,15 @@ const Login = () => {
                 <div className="flex justify-center">
                     <h2 className="text-3xl font-extrabold text-gray-900">Log In to Your Account</h2>
                 </div>
+
+
+                {errorMessage && (
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 mt-4">
+                        <h5 className='text-bold font-medium'>VALIDATION ERROR:</h5>
+                         The password does not match the user account or the account does not exist. Please verify both the user name and password and try again.
+                    </div>
+                )}
+
                 <Form onSubmit={handleSignIn} className="mt-8">
                     <div>
                         <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
@@ -83,6 +94,8 @@ const Login = () => {
                         >
                             Google
                         </button>
+
+
                         <button
                             className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-1/2"
                             type="button"
