@@ -4,7 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState(null);
 
     const handleSignIn = event => {
         event.preventDefault();
@@ -33,7 +33,7 @@ const Login = () => {
 
 
                 {errorMessage && (
-                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 mt-4">
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 mt-4" role='alert'>
                         <h5 className='text-bold font-medium'>VALIDATION ERROR:</h5>
                          The password does not match the user account or the account does not exist. Please verify both the user name and password and try again.
                     </div>
