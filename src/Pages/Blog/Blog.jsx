@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
   return (
-    <div className='container mx-auto px-4'>
+    <div className='container mx-auto px-4 mb-10'>
       <h4 className='text-4xl font-bold text-center mt-7 mb-10'>Questions and Answer:</h4>
 
       <div className='sm:flex sm:flex-wrap -mx-2'>

@@ -7,6 +7,8 @@ import Register from "../Pages/Register/Register";
 import Main from "../Shared/Main/Main";
 import ReviewClient from "../Component/Review/Review";
 import ChefLayout from "../Component/ChefLayout/ChefLayout";
+import Recipe from "../Shared/Recipe/Recipe";
+
 
 const router = createBrowserRouter([
     {
@@ -18,7 +20,7 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Main></Main>
             },
-            
+
             {
                 path: '/blog',
                 element: <Blog></Blog>
@@ -34,7 +36,18 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <ReviewClient></ReviewClient>
+            },
+            {
+                path: 'cheflayout',
+                element: <ChefLayout></ChefLayout>,
+                
+            },
+            {
+                path: 'cheflayout/:id',
+                element: <Recipe></Recipe>
             }
+
+
         ]
     }
 ])

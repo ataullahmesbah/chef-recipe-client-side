@@ -20,11 +20,11 @@ const ChefLayout = () => {
                         <h4 class="text-3xl font-bold text-gray-800">Famous Chef Recipe</h4>
                     </div>
                     <div class="max-w-3xl mx-auto text-center">
-                        <p class="text-xl text-gray-700">Indulge in our signature dish, crafted by our renowned chef using only the freshest and finest ingredients. This dish is sure to take your taste buds on a journey to the heart of the culinary arts.</p>
+                        <p class="text-xl text-gray-700">Indulge in our kitchen zen, crafted by our renowned chef using only the freshest and finest ingredients. This dish is sure to take your taste buds on a journey to the heart of the culinary arts.</p>
                     </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center space-x-6">
+                <div className="flex flex-wrap justify-center space-x-6 ">
                     {
                         chefInfo.map(chefInformation => <ChefInformationDetails
                         key={chefInformation.id}
