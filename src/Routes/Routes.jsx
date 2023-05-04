@@ -10,12 +10,14 @@ import ChefLayout from "../Component/ChefLayout/ChefLayout";
 import Recipe from "../Shared/Recipe/Recipe";
 import PrivateRoute from "./PrivateRoute";
 import RecipeDetailsInfo from "../Pages/RecipeDetailsInfo/RecipeDetailsInfo";
+import ErrorPage from "../Pages/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Home></Home>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
 
             {
