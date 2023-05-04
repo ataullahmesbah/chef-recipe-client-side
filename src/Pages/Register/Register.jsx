@@ -4,7 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
 
-  const { user, createUser } = useContext(AuthContext);
+  const { user, createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   console.log(createUser);
   const [error, setError] = useState(null);
 
@@ -37,7 +37,29 @@ const Register = () => {
         console.log(error);
       })
 
+
   }
+
+  const handleGoogleRegister = () => {
+    googleSignIn()
+    .then(result => {
+      const loggedInUser = result.user;
+    })
+    .catch(error => {
+      setError(error.message);
+    });
+  };
+
+  const handleGithubRegister = () => {
+    githubSignIn()
+    .then(result => {
+      const loggedInUser = result.user;
+    })
+    .catch(error => {
+      setError(error.message);
+    });
+  }
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-6 sm:py-8">
       <div className="bg-white p-6 rounded-lg shadow-lg  w-full sm:w-2/3 lg:w-1/2 xl:w-1/3">
@@ -127,7 +149,7 @@ const Register = () => {
 
         <div className="mt-4 flex items-center justify-between space-x-2">
 
-          <button
+          <button onClick={handleGoogleRegister}
             className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-1/2 "
             type="button"
           >
@@ -135,7 +157,7 @@ const Register = () => {
           </button>
 
 
-          <button
+          <button onClick={handleGithubRegister}
             className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-1/2"
             type="button"
           >

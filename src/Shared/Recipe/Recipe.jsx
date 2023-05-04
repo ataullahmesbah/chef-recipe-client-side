@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import RecipeDetails from '../../Pages/RecipeDetails/RecipeDetails';
+import RecipeDetailsInfo from '../../Pages/RecipeDetailsInfo/RecipeDetailsInfo';
 
 const Recipe = () => {
 
@@ -19,11 +20,25 @@ const Recipe = () => {
     
     return (
         <div>
+            
             {
-                recipeDetails?.recipes?.map(recipeInfo => <RecipeDetails
-                key={recipeInfo.id}
+                <RecipeDetails
+                
                 recipeDetails={recipeDetails}
-                ></RecipeDetails>)
+                ></RecipeDetails>
+
+                
+
+                
+            }
+
+            {
+                recipeDetails?.recipes?.map(recipeInfo => <RecipeDetailsInfo
+                    key={recipeInfo.id}
+                    recipeDetails={recipeDetails}
+                >
+
+                </RecipeDetailsInfo>)
             }
         </div>
     );
