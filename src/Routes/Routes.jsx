@@ -8,6 +8,7 @@ import Main from "../Shared/Main/Main";
 import ReviewClient from "../Component/Review/Review";
 import ChefLayout from "../Component/ChefLayout/ChefLayout";
 import Recipe from "../Shared/Recipe/Recipe";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'cheflayout/:id',
-                element: <Recipe></Recipe>
+                element: <PrivateRoute><Recipe></Recipe></PrivateRoute>
             }
 
 
