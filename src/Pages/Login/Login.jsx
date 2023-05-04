@@ -3,7 +3,7 @@ import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState(null);
     const navigate = useNavigate();
 
@@ -29,6 +29,26 @@ const Login = () => {
             })
 
     }
+
+    const handleGoogleLogin = () => {
+        googleSignIn()
+        .then(result => {
+          const loggedInUser = result.user;
+        })
+        .catch(error => {
+          setError(error.message);
+        });
+      };
+    
+      const handleGithubLogin = () => {
+        githubSignIn()
+        .then(result => {
+          const loggedInUser = result.user;
+        })
+        .catch(error => {
+          setError(error.message);
+        });
+      }
     return (
         <div className="flex flex-col items-center justify-center h-screen">
             <div className="max-w-md w-full px-6">
@@ -93,7 +113,8 @@ const Login = () => {
 
                     <div className="mt-4 flex items-center justify-between space-x-2">
 
-                        <button
+                        <button onClick={handleGoogleLogin}
+
                             className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-1/2 "
                             type="button"
                         >
@@ -101,7 +122,7 @@ const Login = () => {
                         </button>
 
 
-                        <button
+                        <button onClick={handleGithubLogin}
                             className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-1/2"
                             type="button"
                         >
