@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import RecipeDetailsInfo from "../Pages/RecipeDetailsInfo/RecipeDetailsInfo";
 import ErrorPage from "../Pages/ErrorPage";
 import RecipeSection from "../Component/RecipeSection/RecipeSection";
+import ItemsSection from "../Pages/ItemsSection";
 
 
 const router = createBrowserRouter([
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/',
-                element: <ReviewClient></ReviewClient>
+                element: <ItemsSection></ItemsSection>
             },
             {
                 path: '/',
