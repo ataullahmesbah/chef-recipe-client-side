@@ -28,7 +28,11 @@ const Navbar = () => {
                         <Link to='/blog' className="text-gray-800 hover:text-purple-600 font-bold text-xl">Blog</Link>
 
                         {user && 
-                                <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
+                                // <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
+
+                                <div >
+                                    <img className='w-12 rounded-full'  src={user?.photoURL} alt="" />
+                                </div>
                            }
 
                         { user ?

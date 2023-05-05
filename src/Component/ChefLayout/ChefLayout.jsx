@@ -7,7 +7,7 @@ const ChefLayout = () => {
     const [chefInfo, setChefInfo] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allData')
+        fetch('https://assignment-10-server-side-ataullahmesbah.vercel.app/allData')
             .then(res => res.json())
             .then(data => setChefInfo(data))
     }, []);
@@ -24,17 +24,17 @@ const ChefLayout = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center space-x-6 ">
-                    {
-                        chefInfo.map(chefInformation => <ChefInformationDetails
-                        key={chefInformation.id}
-                        chefInformation={chefInformation}
-                        ></ChefInformationDetails>
-                        )
-                    }
-
-                    
+                <div className="flex flex-wrap mt-10 mb-10 grid-cols-2 gap-6 sm:grid-cols-1 justify-center lg:mx-36">
+                    {chefInfo.map(chefInformation => (
+                        <ChefInformationDetails
+                            key={chefInformation.id}
+                            chefInformation={chefInformation}
+                        />
+                    ))}
                 </div>
+
+
+
             </div>
 
         </div>

@@ -34,6 +34,7 @@ const Login = () => {
         googleSignIn()
         .then(result => {
           const loggedInUser = result.user;
+          navigate(from, {replace: true})
         })
         .catch(error => {
           setError(error.message);
@@ -44,6 +45,7 @@ const Login = () => {
         githubSignIn()
         .then(result => {
           const loggedInUser = result.user;
+          navigate(from, {replace: true})
         })
         .catch(error => {
           setError(error.message);

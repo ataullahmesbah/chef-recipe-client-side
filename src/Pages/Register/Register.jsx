@@ -156,6 +156,11 @@ const Register = () => {
             Google
           </button>
 
+          {/* { user && 
+            <div>
+              <img src={user.photoURL} alt="" />
+          </div>} */}
+
 
           <button onClick={handleGithubRegister}
             className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-1/2"

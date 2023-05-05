@@ -11,6 +11,7 @@ import Recipe from "../Shared/Recipe/Recipe";
 import PrivateRoute from "./PrivateRoute";
 import RecipeDetailsInfo from "../Pages/RecipeDetailsInfo/RecipeDetailsInfo";
 import ErrorPage from "../Pages/ErrorPage";
+import RecipeSection from "../Component/RecipeSection/RecipeSection";
 
 
 const router = createBrowserRouter([
@@ -42,14 +43,18 @@ const router = createBrowserRouter([
                 element: <ReviewClient></ReviewClient>
             },
             {
+                path: '/',
+                element: <RecipeSection></RecipeSection>
+            },
+            {
                 path: 'cheflayout',
                 element: <ChefLayout></ChefLayout>,
-                
+
             },
             {
                 path: 'cheflayout/:id',
                 element: <PrivateRoute><Recipe></Recipe></PrivateRoute>
-                
+
             }
 
 
